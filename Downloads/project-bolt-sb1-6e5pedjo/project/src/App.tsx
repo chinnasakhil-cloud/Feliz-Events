@@ -1,21 +1,18 @@
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <Services />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      {/* Add other routes like /dashboard later */}
+    </Routes>
   );
-}
+};
 
 export default App;
+
